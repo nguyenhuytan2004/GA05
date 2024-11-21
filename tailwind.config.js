@@ -1,8 +1,8 @@
 module.exports = {
     content: [
-        "./src/resources/views/**/*.hbs",
-        "./src/assets/js/**/*.js",
-        "./src/assets/css/**/*.css",
+        "./src/views/**/*.hbs",
+        "./public/js/**/*.js",
+        "./public/css/**/*.css",
     ],
     theme: {
         container: {
