@@ -2,7 +2,7 @@
 <header class="bg-gray-dark sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center py-4">
         <!-- Left section: Logo -->
-        <a href="index" class="flex items-center">
+        <a href="/" class="flex items-center">
             <div>
                 <img
                     src="/public/images/template-white-logo.png"
@@ -34,12 +34,10 @@
         <!-- Center section: Menu -->
         <nav class="hidden lg:flex md:flex-grow justify-center">
             <ul class="flex justify-center space-x-4 text-white">
-                <li>
-                    <a
-                        href="index"
+                <li><a
+                        href="/"
                         class="hover:text-secondary font-semibold"
-                    >Home</a>
-                </li>
+                    >Home</a></li>
 
                 <!-- Men Dropdown -->
                 <li class="relative group" x-data="{ open: false }">
@@ -67,24 +65,18 @@
                         x-transition:leave-start="opacity-100 scale-100"
                         x-transition:leave-end="opacity-0 scale-90"
                     >
-                        <li>
-                            <a
+                        <li><a
                                 href="shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded"
-                            >Men Item 1</a>
-                        </li>
-                        <li>
-                            <a
+                            >Men Item 1</a></li>
+                        <li><a
                                 href="shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded"
-                            >Men Item 2</a>
-                        </li>
-                        <li>
-                            <a
+                            >Men Item 2</a></li>
+                        <li><a
                                 href="shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded"
-                            >Men Item 3</a>
-                        </li>
+                            >Men Item 3</a></li>
                     </ul>
                 </li>
 
@@ -114,57 +106,33 @@
                         x-transition:leave-start="opacity-100 scale-100"
                         x-transition:leave-end="opacity-0 scale-90"
                     >
-                        <li>
-                            <a
+                        <li><a
                                 href="shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded"
-                            >Women Item 1</a>
-                        </li>
-                        <li>
-                            <a
+                            >Women Item 1</a></li>
+                        <li><a
                                 href="shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded"
-                            >Women Item 2</a>
-                        </li>
-                        <li>
-                            <a
+                            >Women Item 2</a></li>
+                        <li><a
                                 href="shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded"
-                            >Women Item 3</a>
-                        </li>
+                            >Women Item 3</a></li>
                     </ul>
                 </li>
 
-                <li>
-                    <a
+                <li><a
                         href="shop"
                         class="hover:text-secondary font-semibold"
-                    >Shop</a>
-                </li>
-                <li>
-                    <a
-                        href="single-product-page"
-                        class="hover:text-secondary font-semibold"
-                    >Product</a>
-                </li>
-                <li>
-                    <a
-                        href="checkout"
-                        class="hover:text-secondary font-semibold"
-                    >Checkout</a>
-                </li>
-                <li>
-                    <a
+                    >Shop</a></li>
+                <li><a
                         href="about"
                         class="hover:text-secondary font-semibold"
-                    >About</a>
-                </li>
-                <li>
-                    <a
-                        href="contactus"
+                    >About</a></li>
+                <li><a
+                        href="contact"
                         class="hover:text-secondary font-semibold"
-                    >Contact us</a>
-                </li>
+                    >Contact</a></li>
             </ul>
         </nav>
 
@@ -202,9 +170,7 @@
                                     class="h-12 w-12 object-cover rounded mr-2"
                                 />
                                 <div>
-                                    <p class="font-semibold">
-                                        Summer black dress
-                                    </p>
+                                    <p class="font-semibold">Summer black dress</p>
                                     <p class="text-sm">Quantity: 1</p>
                                 </div>
                             </div>
@@ -219,9 +185,7 @@
                                     class="h-12 w-12 object-cover rounded mr-2"
                                 />
                                 <div>
-                                    <p class="font-semibold">
-                                        Black suit
-                                    </p>
+                                    <p class="font-semibold">Black suit</p>
                                     <p class="text-sm">Quantity: 1</p>
                                 </div>
                             </div>
@@ -229,7 +193,7 @@
                         </div>
                     </div>
                     <a
-                        href="cart"
+                        href="/cart"
                         class="block text-center mt-4 border border-primary bg-primary hover:bg-transparent text-white hover:text-primary py-2 rounded-full font-semibold"
                     >Go to Cart</a>
                 </div>
@@ -266,12 +230,10 @@
     class="mobile-menu hidden flex flex-col items-center space-y-8 lg:hidden"
 >
     <ul class="w-full">
-        <li>
-            <a
-                href="index"
+        <li><a
+                href="/"
                 class="hover:text-secondary font-bold block py-2"
-            >Home</a>
-        </li>
+            >Home</a></li>
 
         <!-- Men Dropdown -->
         <li class="relative group" x-data="{ open: false }">
@@ -292,30 +254,22 @@
                 x-transition
                 class="space-y-2"
             >
-                <li>
-                    <a
+                <li><a
                         href="shop"
                         class="hover:text-secondary font-bold block pt-2 pb-3"
-                    >Shop Men</a>
-                </li>
-                <li>
-                    <a
+                    >Shop Men</a></li>
+                <li><a
                         href="single-product-page"
                         class="hover:text-secondary font-bold block py-2"
-                    >Men item 1</a>
-                </li>
-                <li>
-                    <a
+                    >Men item 1</a></li>
+                <li><a
                         href="single-product-page"
                         class="hover:text-secondary font-bold block py-2"
-                    >Men item 2</a>
-                </li>
-                <li>
-                    <a
+                    >Men item 2</a></li>
+                <li><a
                         href="single-product-page"
                         class="hover:text-secondary font-bold block py-2"
-                    >Men item 3</a>
-                </li>
+                    >Men item 3</a></li>
             </ul>
         </li>
 
@@ -338,57 +292,37 @@
                 x-transition
                 class="pl-4 space-y-2"
             >
-                <li>
-                    <a
+                <li><a
                         href="shop"
                         class="hover:text-secondary font-bold block py-2"
-                    >Shop Women</a>
-                </li>
-                <li>
-                    <a
+                    >Shop Women</a></li>
+                <li><a
                         href="single-product-page"
                         class="hover:text-secondary font-bold block py-2"
-                    >Women item 1</a>
-                </li>
-                <li>
-                    <a
+                    >Women item 1</a></li>
+                <li><a
                         href="single-product-page"
                         class="hover:text-secondary font-bold block py-2"
-                    >Women item 2</a>
-                </li>
-                <li>
-                    <a
+                    >Women item 2</a></li>
+                <li><a
                         href="single-product-page"
                         class="hover:text-secondary font-bold block py-2"
-                    >Women item 3</a>
-                </li>
+                    >Women item 3</a></li>
             </ul>
         </li>
 
-        <li>
-            <a
+        <li><a
                 href="shop"
                 class="hover:text-secondary font-bold block py-2"
-            >Shop</a>
-        </li>
-        <li>
-            <a
-                href="single-product-page"
-                class="hover:text-secondary font-bold block py-2"
-            >Product</a>
-        </li>
-        <li>
-            <a
-                href="checkout"
-                class="hover:text-secondary font-bold block py-2"
-            >Checkout</a>
-        </li>
-        <li>
-            <a
+            >Shop</a></li>
+        <li><a
                 href="about"
                 class="hover:text-secondary font-bold block py-2"
-            >About</a>
-        </li>
+            >About</a></li>
+        <li><a
+                href="contact"
+                class="hover:text-secondary font-bold block py-2"
+            >Contact</a></li>
     </ul>
     <div class="flex flex-col mt-6 space-y-2 items-center">
         <a
@@ -396,11 +330,11 @@
             class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]"
         >Register</a>
         <a
-            href="register"
+            href="login"
             class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]"
         >Login</a>
         <a
-            href="register"
+            href="cart"
             class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full inline-block flex items-center justify-center min-w-[110px]"
         >Cart -&nbsp;<span>5</span>&nbsp;items</a>
     </div>

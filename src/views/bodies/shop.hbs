@@ -8,13 +8,19 @@
             <div class="flex items-center space-x-4">
                 <button
                     class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none"
-                >Show On Sale</button>
+                >
+                    Show On Sale
+                </button>
                 <button
                     class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none"
-                >List View</button>
+                >
+                    List View
+                </button>
                 <button
                     class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none"
-                >Grid View</button>
+                >
+                    Grid View
+                </button>
             </div>
             <div class="flex mt-5 md:mt-0 space-x-4">
                 <div class="relative">
@@ -31,13 +37,13 @@
                         <img
                             id="arrow-down"
                             class="h-4 w-4"
-                            src="/src/assets/images/filter-down-arrow.svg"
+                            src="/public/images/filter-down-arrow.svg"
                             alt="filter arrow"
                         />
                         <img
                             id="arrow-up"
                             class="h-4 w-4 hidden"
-                            src="/src/assets/images/filter-up-arrow.svg"
+                            src="/public/images/filter-up-arrow.svg"
                             alt="filter arrow"
                         />
                     </div>
@@ -49,7 +55,9 @@
             <button
                 id="products-toggle-filters"
                 class="bg-primary text-white py-2 px-4 rounded-full focus:outline-none"
-            >Show Filters</button>
+            >
+                Show Filters
+            </button>
         </div>
         <div class="flex flex-col md:flex-row">
             <!-- Filters -->
@@ -205,31 +213,156 @@
                 <div
                     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
                 >
-                    <!-- Product -->
-                    {{#each shop}}
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <a href="single-product-page.html"><img
-                                    src="{{this.imageUrl}}"
-                                    alt="{{this.product_name}}"
-                                    class="w-full object-cover mb-4 rounded-lg"
-                                /></a>
-                            <a
-                                href="single-product-page.html"
-                                class="text-lg font-semibold mb-2"
-                            >{{this.product_name}}</a>
-
-                            <div class="flex items-center mb-4">
-                                <span
-                                    class="text-lg font-bold text-primary"
-                                >${{this.price}}</span>
-                            </div>
-                            <button
-                                class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full"
-                            >
-                                Add to Cart
-                            </button>
+                    <!-- Product 1 -->
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <a href="/product">
+                            <img
+                                src="public/images/products/5.jpg"
+                                alt="Product 1"
+                                class="w-full object-cover mb-4 rounded-lg"
+                            />
+                        </a>
+                        <a
+                            href="/product"
+                            class="text-lg font-semibold mb-2"
+                        >Blue women's suit</a>
+                        <p class="my-2">Women</p>
+                        <div class="flex items-center mb-4">
+                            <span
+                                class="text-lg font-bold text-primary"
+                            >$19.99</span>
+                            <span
+                                class="text-sm line-through ml-2"
+                            >$24.99</span>
                         </div>
-                    {{/each}}
+                        <button
+                            class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <a href="/product"><img
+                                src="public/images/products/6.jpg"
+                                alt="Product 2"
+                                class="w-full object-cover mb-4 rounded-lg"
+                            />
+                        </a>
+                        <a
+                            href="/product"
+                            class="text-lg font-semibold mb-2"
+                        >White shirt with long sleeves</a>
+                        <p class="my-2">Women</p>
+                        <div class="flex items-center mb-4">
+                            <span
+                                class="text-lg font-bold text-gray-900"
+                            >$29.99</span>
+                        </div>
+                        <button
+                            class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <a href="/product"><img
+                                src="public/images/products/7.jpg"
+                                alt="Product 3"
+                                class="w-full object-cover mb-4 rounded-lg"
+                            />
+                        </a>
+                        <a
+                            href="/product"
+                            class="text-lg font-semibold mb-2"
+                        >Yellow men's suit</a>
+                        <p class="my-2">Men</p>
+                        <div class="flex items-center mb-4">
+                            <span
+                                class="text-lg font-bold text-gray-900"
+                            >$15.99</span>
+                            <span
+                                class="text-sm line-through ml-2"
+                            >$19.99</span>
+                        </div>
+                        <button
+                            class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <img
+                            src="public/images/products/8.jpg"
+                            alt="Product 4"
+                            class="w-full object-cover mb-4 rounded-lg"
+                        />
+                        <a href="#" class="text-lg font-semibold mb-2">Red dress</a>
+                        <p class="my-2">Women</p>
+                        <div class="flex items-center mb-4">
+                            <span
+                                class="text-lg font-bold text-primary"
+                            >$39.99</span>
+                            <span
+                                class="text-sm line-through ml-2"
+                            >$49.99</span>
+                        </div>
+                        <button
+                            class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <img
+                            src="public/images/products/4.jpg"
+                            alt="Product 4"
+                            class="w-full object-cover mb-4 rounded-lg"
+                        />
+                        <a href="#" class="text-lg font-semibold">Black leather
+                            jacket</a>
+                        <p class="my-2">Women</p>
+                        <div class="flex items-center mb-4">
+                            <span
+                                class="text-lg font-bold text-primary"
+                            >$39.99</span>
+                            <span
+                                class="text-sm line-through ml-2"
+                            >$49.99</span>
+                        </div>
+                        <button
+                            class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <img
+                            src="public/images/products/3.jpg"
+                            alt="Product 3"
+                            class="w-full object-cover mb-4 rounded-lg"
+                        />
+                        <a href="#" class="text-lg font-semibold mb-2">Black
+                            long dress</a>
+                        <p class="my-2">Women, Accessories</p>
+                        <div class="flex items-center mb-4">
+                            <span
+                                class="text-lg font-bold text-gray-900"
+                            >$15.99</span>
+                            <span
+                                class="text-sm line-through ml-2"
+                            >$19.99</span>
+                        </div>
+                        <button
+                            class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full"
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
                 </div>
                 <!-- Pagination -->
                 <div class="flex justify-center mt-8">

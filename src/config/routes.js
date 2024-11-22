@@ -1,28 +1,23 @@
-const homeRouter = require("./homeRoute");
-const aboutRouter = require("./aboutRoute");
-const registerRouter = require("./registerRoute");
-const shopRouter = require("./shopRoute");
-const cartRouter = require("./cartRoute");
-const checkoutRouter = require("./checkoutRoute");
-const contactRouter = require("./contactRoute");
-const loginRouter = require("./loginRoute");
-const notFoundRouter = require("./notFoundRoute");
-const productRouter = require("./productRoute");
+const homeRouter = require("../components/home/homeRoute");
+const aboutRouter = require("../components/about/aboutRoute");
+const userRouter = require("../components/user/userRoute");
+const shopRouter = require("../components/shop/shopRoute");
+const contactRouter = require("../components/contact/contactRoute");
 
 function route(app) {
-    app.use("/single-product-page", productRouter);
-    app.use("/404", notFoundRouter);
-    app.use("/login", loginRouter);
-    app.use("/contact", contactRouter);
-    app.use("/checkout", checkoutRouter);
+    app.get("/product", shopRouter);
+    app.get("/404", homeRouter);
+    app.get("/login", userRouter);
+    app.get("/contact", contactRouter);
+    app.get("/checkout", userRouter);
 
-    // dùng riêng xử lý HTTP
-    app.get("/register", registerRouter);
-    app.post("/register", registerRouter);
+    // // dùng riêng xử lý HTTP
+    app.get("/register", userRouter);
+    // app.post("/register", registerRouter);
 
-    app.use("/cart", cartRouter);
-    app.use("/about", aboutRouter);
-    app.use("/shop", shopRouter);
+    app.get("/cart", userRouter);
+    app.get("/about", aboutRouter);
+    app.get("/shop", shopRouter);
     app.use("/", homeRouter);
 }
 

@@ -4,21 +4,18 @@
         <ol class="list-reset flex">
             <li>
                 <a
-                    href="index.html"
+                    href="index"
                     class="font-semibold hover:text-primary"
                 >Home</a>
             </li>
             <li><span class="mx-2">&gt;</span></li>
             <li>
-                <a
-                    href="shop.html"
-                    class="font-semibold hover:text-primary"
-                >Shop</a>
+                <a href="shop" class="font-semibold hover:text-primary">Shop</a>
             </li>
             <li><span class="mx-2">&gt;</span></li>
             <li>
                 <a
-                    href="shop.html"
+                    href="category"
                     class="font-semibold hover:text-primary"
                 >T-shirts</a>
             </li>
@@ -37,23 +34,21 @@
                 <div class="w-full lg:w-1/2">
                     <div class="grid gap-4">
                         <!-- Big Image -->
-                        {{#each product}}
-                            <div id="main-image-container">
-                                <img
-                                    id="main-image"
-                                    class="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
-                                    src="{{this.imageUrl}}"
-                                    alt="Main Product Image"
-                                />
-                            </div>
-                        {{/each}}
+                        <div id="main-image-container">
+                            <img
+                                id="main-image"
+                                class="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
+                                src="/public/images/products/1.jpg"
+                                alt="Main Product Image"
+                            />
+                        </div>
                         <!-- Small Images -->
                         <div class="grid grid-cols-5 gap-4">
                             <div>
                                 <img
                                     onclick="changeImage(this)"
-                                    data-full="/src/assets/images/single-product/1.jpg"
-                                    src="/src/assets/images/single-product/1.jpg"
+                                    data-full="/public/images/single-product/1.jpg"
+                                    src="/public/images/single-product/1.jpg"
                                     class="object-cover object-center max-h-30 max-w-full rounded-lg cursor-pointer"
                                     alt="Gallery Image 1"
                                 />
@@ -61,8 +56,8 @@
                             <div>
                                 <img
                                     onclick="changeImage(this)"
-                                    data-full="/src/assets/images/single-product/2.jpg"
-                                    src="/src/assets/images/single-product/2.jpg"
+                                    data-full="/public/images/single-product/2.jpg"
+                                    src="/public/images/single-product/2.jpg"
                                     class="object-cover object-center max-h-30 max-w-full rounded-lg cursor-pointer"
                                     alt="Gallery Image 2"
                                 />
@@ -70,8 +65,8 @@
                             <div>
                                 <img
                                     onclick="changeImage(this)"
-                                    data-full="/src/assets/images/single-product/3.jpg"
-                                    src="/src/assets/images/single-product/3.jpg"
+                                    data-full="/public/images/single-product/3.jpg"
+                                    src="/public/images/single-product/3.jpg"
                                     class="object-cover object-center max-h-30 max-w-full rounded-lg cursor-pointer"
                                     alt="Gallery Image 3"
                                 />
@@ -79,8 +74,8 @@
                             <div>
                                 <img
                                     onclick="changeImage(this)"
-                                    data-full="/src/assets/images/single-product/4.jpg"
-                                    src="/src/assets/images/single-product/4.jpg"
+                                    data-full="/public/images/single-product/4.jpg"
+                                    src="/public/images/single-product/4.jpg"
                                     class="object-cover object-center max-h-30 max-w-full rounded-lg cursor-pointer"
                                     alt="Gallery Image 4"
                                 />
@@ -88,8 +83,8 @@
                             <div>
                                 <img
                                     onclick="changeImage(this)"
-                                    data-full="/src/assets/images/single-product/5.jpg"
-                                    src="/src/assets/images/single-product/5.jpg"
+                                    data-full="/public/images/single-product/5.jpg"
+                                    src="/public/images/single-product/5.jpg"
                                     class="object-cover object-center max-h-30 max-w-full rounded-lg cursor-pointer"
                                     alt="Gallery Image 5"
                                 />
@@ -98,133 +93,131 @@
                     </div>
                 </div>
                 <!-- Product Details Section -->
-                {{#each product}}
-                    <div class="w-full lg:w-1/2 flex flex-col justify-between">
-                        <div class="pb-8 border-b border-gray-line">
-                            <h1 class="text-3xl font-bold mb-4">
-                                {{this.product_name}}
-                            </h1>
-                            <div class="flex items-center mb-8">
-                                <span>★★★★★</span>
-                                <span class="ml-2">(0 Reviews)</span>
-                                <a
-                                    href="#review-form-place"
-                                    id="write-review-link"
-                                    class="ml-4 text-primary font-semibold"
-                                >Write a review</a>
-                            </div>
-                            <div class="mb-4 pb-4 border-b border-gray-line">
-                                <p class="mb-2">
-                                    Brand:<strong><a
-                                            href="#"
-                                            class="hover:text-primary"
-                                        >
-                                            {{this.brand}}</a></strong>
-                                </p>
-                                <p class="mb-2">
-                                    Product code:<strong>
-                                        {{this.product_code}}</strong>
-                                </p>
-                                <p class="mb-2">
-                                    Availability:<strong>
-                                        {{this.product_status}}</strong>
-                                </p>
-                            </div>
-                            <div class="text-2xl font-semibold mb-8">
-                                ${{this.price}}
-                            </div>
-                            <div class="flex items-center mb-8">
-                                <button
-                                    id="decrease"
-                                    class="bg-primary hover:bg-transparent border border-transparent hover:border-primary text-white hover:text-primary font-semibold w-10 h-10 rounded-full flex items-center justify-center focus:outline-none"
-                                    disabled
-                                >
-                                    -
-                                </button>
-                                <input
-                                    id="quantity"
-                                    type="number"
-                                    value="1"
-                                    class="w-16 py-2 text-center focus:outline-none"
-                                    readonly
-                                />
-                                <button
-                                    id="increase"
-                                    class="bg-primary hover:bg-transparent border border-transparent hover:border-primary text-white hover:text-primary font-semibold w-10 h-10 rounded-full focus:outline-none"
-                                >
-                                    +
-                                </button>
-                            </div>
-                            <button
-                                class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full"
-                            >
-                                Add to Cart
-                            </button>
+                <div class="w-full lg:w-1/2 flex flex-col justify-between">
+                    <div class="pb-8 border-b border-gray-line">
+                        <h1 class="text-3xl font-bold mb-4">
+                            Preppy T-shirt
+                        </h1>
+                        <div class="flex items-center mb-8">
+                            <span>★★★★★</span>
+                            <span class="ml-2">(0 Reviews)</span>
+                            <a
+                                href="#review-form-place"
+                                id="write-review-link"
+                                class="ml-4 text-primary font-semibold"
+                            >Write a review</a>
                         </div>
-                        <!-- Social sharing -->
-                        <div class="flex space-x-4 my-6">
-                            <a
-                                href="#"
-                                class="w-4 h-4 flex items-center justify-center"
-                            >
-                                <img
-                                    src="/src/assets/images/social_icons/facebook.svg"
-                                    alt="Facebook"
-                                    class="w-4 h-4 transition-transform transform hover:scale-110"
-                                />
-                            </a>
-                            <a
-                                href="#"
-                                class="w-4 h-4 flex items-center justify-center"
-                            >
-                                <img
-                                    src="/src/assets/images/social_icons/instagram.svg"
-                                    alt="Instagram"
-                                    class="w-4 h-4 transition-transform transform hover:scale-110"
-                                />
-                            </a>
-                            <a
-                                href="#"
-                                class="w-4 h-4 flex items-center justify-center"
-                            >
-                                <img
-                                    src="/src/assets/images/social_icons/pinterest.svg"
-                                    alt="Pinterest"
-                                    class="w-4 h-4 transition-transform transform hover:scale-110"
-                                />
-                            </a>
-                            <a
-                                href="#"
-                                class="w-4 h-4 flex items-center justify-center"
-                            >
-                                <img
-                                    src="/src/assets/images/social_icons/twitter.svg"
-                                    alt="Twitter"
-                                    class="w-4 h-4 transition-transform transform hover:scale-110"
-                                />
-                            </a>
-                            <a
-                                href="#"
-                                class="w-4 h-4 flex items-center justify-center"
-                            >
-                                <img
-                                    src="/src/assets/images/social_icons/viber.svg"
-                                    alt="Viber"
-                                    class="w-4 h-4 transition-transform transform hover:scale-110"
-                                />
-                            </a>
-                        </div>
-                        <!-- Additional Information -->
-                        <div>
-                            <h3 class="text-lg font-semibold mb-2">
-                                Product Description
-                            </h3>
-                            <p>
-                                {{this.description}}
+                        <div class="mb-4 pb-4 border-b border-gray-line">
+                            <p class="mb-2">
+                                Brand:<strong><a
+                                        href="#"
+                                        class="hover:text-primary"
+                                    >
+                                        Nike</a></strong>
+                            </p>
+                            <p class="mb-2">
+                                Product code:<strong> 00123</strong>
+                            </p>
+                            <p class="mb-2">
+                                Availability:<strong> In Stock</strong>
                             </p>
                         </div>
+                        <div class="text-2xl font-semibold mb-8">
+                            $40.00
+                        </div>
+                        <div class="flex items-center mb-8">
+                            <button
+                                id="decrease"
+                                class="bg-primary hover:bg-transparent border border-transparent hover:border-primary text-white hover:text-primary font-semibold w-10 h-10 rounded-full flex items-center justify-center focus:outline-none"
+                                disabled
+                            >
+                                -
+                            </button>
+                            <input
+                                id="quantity"
+                                type="number"
+                                value="1"
+                                class="w-16 py-2 text-center focus:outline-none"
+                                readonly
+                            />
+                            <button
+                                id="increase"
+                                class="bg-primary hover:bg-transparent border border-transparent hover:border-primary text-white hover:text-primary font-semibold w-10 h-10 rounded-full focus:outline-none"
+                            >
+                                +
+                            </button>
+                        </div>
+                        <button
+                            class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full"
+                        >
+                            Add to Cart
+                        </button>
                     </div>
-                {{/each}}
+                    <!-- Social sharing -->
+                    <div class="flex space-x-4 my-6">
+                        <a
+                            href="#"
+                            class="w-4 h-4 flex items-center justify-center"
+                        >
+                            <img
+                                src="public/images/social_icons/facebook.svg"
+                                alt="Facebook"
+                                class="w-4 h-4 transition-transform transform hover:scale-110"
+                            />
+                        </a>
+                        <a
+                            href="#"
+                            class="w-4 h-4 flex items-center justify-center"
+                        >
+                            <img
+                                src="public/images/social_icons/instagram.svg"
+                                alt="Instagram"
+                                class="w-4 h-4 transition-transform transform hover:scale-110"
+                            />
+                        </a>
+                        <a
+                            href="#"
+                            class="w-4 h-4 flex items-center justify-center"
+                        >
+                            <img
+                                src="public/images/social_icons/pinterest.svg"
+                                alt="Pinterest"
+                                class="w-4 h-4 transition-transform transform hover:scale-110"
+                            />
+                        </a>
+                        <a
+                            href="#"
+                            class="w-4 h-4 flex items-center justify-center"
+                        >
+                            <img
+                                src="public/images/social_icons/twitter.svg"
+                                alt="Twitter"
+                                class="w-4 h-4 transition-transform transform hover:scale-110"
+                            />
+                        </a>
+                        <a
+                            href="#"
+                            class="w-4 h-4 flex items-center justify-center"
+                        >
+                            <img
+                                src="public/images/social_icons/viber.svg"
+                                alt="Viber"
+                                class="w-4 h-4 transition-transform transform hover:scale-110"
+                            />
+                        </a>
+                    </div>
+                    <!-- Additional Information -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">
+                            Product Description
+                        </h3>
+                        <p>
+                            This is a premium quality t-shirt perfect for casual
+                            wear. Made with high-quality fabric to ensure
+                            comfort and durability.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -680,7 +673,7 @@
     </div>
 </section>
 
-<!-- Latest product section -->
+<!-- Latest-products -->
 <section id="latest-products" class="py-10">
     <div class="container mx-auto px-4">
         <h2 class="text-2xl font-bold mb-8">Latest products</h2>
@@ -688,15 +681,13 @@
             <!-- Product 1 -->
             <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
                 <div class="bg-white p-3 rounded-lg shadow-lg">
-                    <a href="single-product-page.html"><img
-                            src="/src/assets/images/products/5.jpg"
-                            alt="Product 1"
-                            class="w-full object-cover mb-4 rounded-lg"
-                        /></a>
-                    <a
-                        href="single-product-page.html"
-                        class="text-lg font-semibold mb-2"
-                    >Blue women's suit</a>
+                    <img
+                        src="public/images/products/5.jpg"
+                        alt="Product 1"
+                        class="w-full object-cover mb-4 rounded-lg"
+                    />
+                    <a href="#" class="text-lg font-semibold mb-2">Blue women's
+                        suit</a>
                     <p class="my-2">Women</p>
                     <div class="flex items-center mb-4">
                         <span
@@ -714,15 +705,13 @@
             <!-- Product 2 -->
             <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
                 <div class="bg-white p-3 rounded-lg shadow-lg">
-                    <a href="single-product-page.html"><img
-                            src="/src/assets/images/products/6.jpg"
-                            alt="Product 2"
-                            class="w-full object-cover mb-4 rounded-lg"
-                        /></a>
-                    <a
-                        href="single-product-page.html"
-                        class="text-lg font-semibold mb-2"
-                    >White shirt with long sleeves</a>
+                    <img
+                        src="public/images/products/6.jpg"
+                        alt="Product 2"
+                        class="w-full object-cover mb-4 rounded-lg"
+                    />
+                    <a href="#" class="text-lg font-semibold mb-2">White shirt
+                        with long sleeves</a>
                     <p class="my-2">Women</p>
                     <div class="flex items-center mb-4">
                         <span
@@ -739,15 +728,13 @@
             <!-- Product 3 -->
             <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
                 <div class="bg-white p-3 rounded-lg shadow-lg">
-                    <a href="single-product-page.html"><img
-                            src="/src/assets/images/products/7.jpg"
-                            alt="Product 3"
-                            class="w-full object-cover mb-4 rounded-lg"
-                        /></a>
-                    <a
-                        href="single-product-page.html"
-                        class="text-lg font-semibold mb-2"
-                    >Yellow men's suit</a>
+                    <img
+                        src="public/images/products/7.jpg"
+                        alt="Product 3"
+                        class="w-full object-cover mb-4 rounded-lg"
+                    />
+                    <a href="#" class="text-lg font-semibold mb-2">Yellow men's
+                        suit</a>
                     <p class="my-2">Men</p>
                     <div class="flex items-center mb-4">
                         <span
@@ -765,15 +752,12 @@
             <!-- Product 4 -->
             <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
                 <div class="bg-white p-3 rounded-lg shadow-lg">
-                    <a href="single-product-page.html"><img
-                            src="/src/assets/images/products/8.jpg"
-                            alt="Product 4"
-                            class="w-full object-cover mb-4 rounded-lg"
-                        /></a>
-                    <a
-                        href="single-product-page.html"
-                        class="text-lg font-semibold mb-2"
-                    >Red dress</a>
+                    <img
+                        src="public/images/products/8.jpg"
+                        alt="Product 4"
+                        class="w-full object-cover mb-4 rounded-lg"
+                    />
+                    <a href="#" class="text-lg font-semibold mb-2">Red dress</a>
                     <p class="my-2">Women</p>
                     <div class="flex items-center mb-4">
                         <span
