@@ -66,10 +66,8 @@ class ShopModel {
     }
 
 
-    static async getProducts(queryParams) {
+    static async getProducts({ category = [], size = [] }) {
         try {
-            let { category = [], size = [] } = queryParams;
-
             // Xử lý category và size nếu là chuỗi
             if (typeof category === "string") {
                 category = [category];
@@ -77,7 +75,7 @@ class ShopModel {
             if (typeof size === "string") {
                 size = [size];
             }
-
+    
             // Điều kiện truy vấn
             const whereConditions = {};
             if (category.length > 0) {
@@ -86,12 +84,12 @@ class ShopModel {
             if (size.length > 0) {
                 whereConditions.size = size;
             }
-
+    
             // Truy vấn cơ sở dữ liệu
             const products = await Shop.findAll({
                 where: whereConditions,
             });
-
+    
             // Thêm URL hình ảnh vào kết quả
             const baseImageUrl = "../../../public/images/products/";
             return products.map((product) => {

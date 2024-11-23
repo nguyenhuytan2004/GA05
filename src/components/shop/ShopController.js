@@ -5,8 +5,9 @@ class ShopController {
     // [GET] '/shop'
     async index(req, res) {
         try {
-            // Gọi Model để lấy danh sách sản phẩm
-            const products = await ShopModel.getProducts(req.query);
+            
+            const { category, size } = req.query;
+            const products = await Shop.getProducts({ category, size });
 
             // Truyền dữ liệu vào view
             res.render("shop", { shop: products });
@@ -16,10 +17,6 @@ class ShopController {
         }
     }
 
-    // [GET] '/shop/product'
-    product(req, res) {
-        res.render("product");
-    }
 
     // [GET] '/shop/search'
     async research(req, res) {

@@ -13,7 +13,7 @@ class ProductController {
             if (!product) {
                 return res.status(404).send("Sản phẩm không tồn tại");
             }
-            console.log(product);
+
             const baseImageUrl = "../../../../public/images/products/";
 
             if (product.Shop && product.Shop.imageFileName) {
@@ -23,7 +23,7 @@ class ProductController {
                 // Xóa trường imageFileName cũ
                 delete product.Shop.imageFileName;
             }
-            console.log(product);
+            
             res.render("product", { product });
             
         } catch (error) {
