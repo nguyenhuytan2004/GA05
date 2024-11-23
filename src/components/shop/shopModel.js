@@ -1,4 +1,5 @@
 const { DataTypes, Sequelize } = require("sequelize");
+const { Op } = require("sequelize");
 const sequelize = require("../../config/dataConfig");
 
 const Shop = sequelize.define(
@@ -22,7 +23,7 @@ const Shop = sequelize.define(
             allowNull: false,
         },
         size: {
-            type: DataTypes.ENUM('S', 'M', 'L'), // Khai báo ENUM cho size
+            type: DataTypes.ENUM("S", "M", "L"), // Khai báo ENUM cho size
             allowNull: false,
         },
         color: {
@@ -34,7 +35,7 @@ const Shop = sequelize.define(
             allowNull: false,
         },
         rating: {
-            type: DataTypes.ENUM('1', '2', '3', '4', '5'), // Khai báo ENUM cho rating
+            type: DataTypes.ENUM("1", "2", "3", "4", "5"), // Khai báo ENUM cho rating
             allowNull: false,
         },
         imageFileName: {
@@ -58,13 +59,12 @@ class ShopModel {
 
     //Getters
     constructor() {
-        this.Shop = Shop;  // Lưu đối tượng Shop vào một thuộc tính
+        this.Shop = Shop; // Lưu đối tượng Shop vào một thuộc tính
     }
 
     static get Shop() {
-        return Shop;  // Getter cho đối tượng Shop
+        return Shop; // Getter cho đối tượng Shop
     }
-
 
     static async getProducts({ category = [], size = [] }) {
         try {
@@ -75,7 +75,7 @@ class ShopModel {
             if (typeof size === "string") {
                 size = [size];
             }
-    
+
             // Điều kiện truy vấn
             const whereConditions = {};
             if (category.length > 0) {
@@ -84,21 +84,47 @@ class ShopModel {
             if (size.length > 0) {
                 whereConditions.size = size;
             }
-    
+
             // Truy vấn cơ sở dữ liệu
             const products = await Shop.findAll({
                 where: whereConditions,
             });
-    
+
             // Thêm URL hình ảnh vào kết quả
             const baseImageUrl = "../../../public/images/products/";
             return products.map((product) => {
                 const productData = product.toJSON(); // Chuyển sang object thuần
-                productData.imageUrl = baseImageUrl + (productData.imageFileName || '');
+                productData.imageUrl =
+                    baseImageUrl + (productData.imageFileName || "");
                 return productData;
             });
         } catch (error) {
             console.error("Lỗi khi truy vấn sản phẩm:", error);
+            throw error;
+        }
+    }
+
+    static async getSearchProducts(product_name) {
+        try {
+            const products = await Shop.findAll({
+                where: {
+                    product_name: {
+                        [Op.like]: `%${product_name}%`, // Tìm kiếm sản phẩm chứa từ khóa
+                    },
+                },
+            });
+
+            const baseImageUrl = "../../../public/images/products/";
+
+            const productData = products.map((product) => {
+                const productData = product.get({ plain: true });
+                productData.imageUrl = baseImageUrl + productData.imageFileName; // Gắn imageUrl
+
+                return productData;
+            });
+            return productData;
+        } catch (error) {
+            console.error("Lỗi khi tìm kiếm:", error);
             throw error;
         }
     }
