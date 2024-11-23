@@ -25,7 +25,7 @@
 
                 <!-- Men Dropdown -->
                 <li class="relative group" x-data="{ open: false }">
-                    <a href="shop" @mouseover="open = true" @mouseleave="open = false" href="#"
+                    <a href="/shop" @mouseover="open = true" @mouseleave="open = false" href="#"
                         class="hover:text-secondary font-semibold flex items-center">
                         Men
                         <i :class="open ? 'fas fa-chevron-up ml-1 text-xs' : 'fas fa-chevron-down ml-1 text-xs'"></i>
@@ -36,13 +36,13 @@
                         x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
                         x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
-                        <li><a href="shop"
+                        <li><a href="/shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Men Item
                                 1</a></li>
-                        <li><a href="shop"
+                        <li><a href="/shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Men Item
                                 2</a></li>
-                        <li><a href="shop"
+                        <li><a href="/shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Men Item
                                 3</a></li>
                     </ul>
@@ -50,7 +50,7 @@
 
                 <!-- Women Dropdown -->
                 <li class="relative group" x-data="{ open: false }">
-                    <a href="shop" @mouseover="open = true" @mouseleave="open = false" href="#"
+                    <a href="/shop" @mouseover="open = true" @mouseleave="open = false" href="#"
                         class="hover:text-secondary font-semibold flex items-center">
                         Women
                         <i :class="open ? 'fas fa-chevron-up ml-1 text-xs' : 'fas fa-chevron-down ml-1 text-xs'"></i>
@@ -61,32 +61,32 @@
                         x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
                         x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
-                        <li><a href="shop"
+                        <li><a href="/shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Women Item
                                 1</a></li>
-                        <li><a href="shop"
+                        <li><a href="/shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Women Item
                                 2</a></li>
-                        <li><a href="shop"
+                        <li><a href="/shop"
                                 class="min-w-40 block px-4 py-2 hover:bg-primary hover:text-white rounded">Women Item
                                 3</a></li>
                     </ul>
                 </li>
 
-                <li><a href="shop" class="hover:text-secondary font-semibold">Shop</a></li>
-                <li><a href="about" class="hover:text-secondary font-semibold">About</a></li>
-                <li><a href="contact" class="hover:text-secondary font-semibold">Contact</a></li>
+                <li><a href="/shop" class="hover:text-secondary font-semibold">Shop</a></li>
+                <li><a href="/about" class="hover:text-secondary font-semibold">About</a></li>
+                <li><a href="/contact" class="hover:text-secondary font-semibold">Contact</a></li>
             </ul>
         </nav>
 
         <!-- Right section: Buttons (for desktop) -->
         <div class="hidden lg:flex items-center space-x-4 relative">
-            <a href="register"
+            <a href="/register"
                 class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Register</a>
-            <a href="login"
+            <a href="/login"
                 class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Login</a>
             <div class="relative group cart-wrapper">
-                <a href="cart">
+                <a href="/cart">
                     <img src="/public/images/cart-shopping.svg" alt="Cart" class="h-6 w-6 group-hover:scale-120" />
                 </a>
                 <!-- Cart dropdown -->
@@ -155,10 +155,10 @@
                 </span>
             </a>
             <ul class="mobile-dropdown-menu" x-show="open" x-transition class="space-y-2">
-                <li><a href="shop" class="hover:text-secondary font-bold block pt-2 pb-3">Shop Men</a></li>
-                <li><a href="single-product-page" class="hover:text-secondary font-bold block py-2">Men item 1</a></li>
-                <li><a href="single-product-page" class="hover:text-secondary font-bold block py-2">Men item 2</a></li>
-                <li><a href="single-product-page" class="hover:text-secondary font-bold block py-2">Men item 3</a></li>
+                <li><a href="/shop" class="hover:text-secondary font-bold block pt-2 pb-3">Shop Men</a></li>
+                <li><a href="/shop" class="hover:text-secondary font-bold block py-2">Men item 1</a></li>
+                <li><a href="/shop" class="hover:text-secondary font-bold block py-2">Men item 2</a></li>
+                <li><a href="/shop" class="hover:text-secondary font-bold block py-2">Men item 3</a></li>
             </ul>
         </li>
 
@@ -172,19 +172,19 @@
                 </span>
             </a>
             <ul class="mobile-dropdown-menu" x-show="open" x-transition class="pl-4 space-y-2">
-                <li><a href="shop" class="hover:text-secondary font-bold block py-2">Shop Women</a></li>
-                <li><a href="single-product-page" class="hover:text-secondary font-bold block py-2">Women item 1</a>
+                <li><a href="/shop" class="hover:text-secondary font-bold block py-2">Shop Women</a></li>
+                <li><a href="/shop" class="hover:text-secondary font-bold block py-2">Women item 1</a>
                 </li>
-                <li><a href="single-product-page" class="hover:text-secondary font-bold block py-2">Women item 2</a>
+                <li><a href="/shop" class="hover:text-secondary font-bold block py-2">Women item 2</a>
                 </li>
-                <li><a href="single-product-page" class="hover:text-secondary font-bold block py-2">Women item 3</a>
+                <li><a href="/shop" class="hover:text-secondary font-bold block py-2">Women item 3</a>
                 </li>
             </ul>
         </li>
 
-        <li><a href="shop" class="hover:text-secondary font-bold block py-2">Shop</a></li>
-        <li><a href="about" class="hover:text-secondary font-bold block py-2">About</a></li>
-        <li><a href="contact" class="hover:text-secondary font-bold block py-2">Contact</a></li>
+        <li><a href="/shop" class="hover:text-secondary font-bold block py-2">Shop</a></li>
+        <li><a href="/about" class="hover:text-secondary font-bold block py-2">About</a></li>
+        <li><a href="/contact" class="hover:text-secondary font-bold block py-2">Contact</a></li>
     </ul>
     <div class="flex flex-col mt-6 space-y-2 items-center">
         <a href="register"
