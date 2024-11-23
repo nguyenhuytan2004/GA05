@@ -222,24 +222,49 @@
                     <!-- Product -->
                     {{#each shop}}
                         <div class="bg-white p-4 rounded-lg shadow">
-                            <a href="single-product-page.html"><img
+                            <a href="/product/{{this.id}}">
+                                <img
                                     src="{{this.imageUrl}}"
                                     alt="{{this.product_name}}"
                                     class="w-full object-cover mb-4 rounded-lg"
-                                /></a>
-                            <a
-                                href="single-product-page.html"
-                                class="text-lg font-semibold mb-2"
-                            >{{this.product_name}}</a>
+                                />
+                            </a>
+                            <a href="/product/{{this.id}}" class="text-lg font-semibold mb-2">
+                                {{this.product_name}}
+                            </a>
 
                             <div class="flex items-center mb-4">
-                                <span
-                                    class="text-lg font-bold text-primary"
-                                >${{this.price}}</span>
+                                <span class="text-lg font-bold text-primary">
+                                    ${{this.price}}
+                                </span>
                             </div>
-                            <button
-                                class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full"
-                            >
+
+                            <div class="mb-4">
+                                <span class="text-sm font-medium text-gray-600">Category:</span>
+                                <span class="text-sm font-semibold">{{this.category}}</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <span class="text-sm font-medium text-gray-600">Size:</span>
+                                <span class="text-sm font-semibold">{{this.size}}</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <span class="text-sm font-medium text-gray-600">Color:</span>
+                                <span class="text-sm font-semibold">{{this.color}}</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <span class="text-sm font-medium text-gray-600">Brand:</span>
+                                <span class="text-sm font-semibold">{{this.brand}}</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <span class="text-sm font-medium text-gray-600">Rating:</span>
+                                <span class="text-sm font-semibold">{{this.rating}}/5</span>
+                            </div>
+
+                            <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">
                                 Add to Cart
                             </button>
                         </div>

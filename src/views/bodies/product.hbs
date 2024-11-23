@@ -4,23 +4,26 @@
         <ol class="list-reset flex">
             <li>
                 <a
-                    href="index"
+                    href=""
                     class="font-semibold hover:text-primary"
                 >Home</a>
             </li>
             <li><span class="mx-2">&gt;</span></li>
             <li>
-                <a href="shop" class="font-semibold hover:text-primary">Shop</a>
+                <a
+                    href="shop"
+                    class="font-semibold hover:text-primary"
+                >Shop</a>
             </li>
             <li><span class="mx-2">&gt;</span></li>
             <li>
                 <a
-                    href="category"
+                    href="shop"
                     class="font-semibold hover:text-primary"
                 >T-shirts</a>
             </li>
             <li><span class="mx-2">&gt;</span></li>
-            <li>Preppy T-shirt</li>
+            <li>{{product.Shop.product_name}}</li>
         </ol>
     </div>
 </section>
@@ -38,7 +41,7 @@
                             <img
                                 id="main-image"
                                 class="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
-                                src="/public/images/products/1.jpg"
+                                src="{{product.Shop.imageUrl}}"
                                 alt="Main Product Image"
                             />
                         </div>
@@ -47,8 +50,8 @@
                             <div>
                                 <img
                                     onclick="changeImage(this)"
-                                    data-full="/public/images/single-product/1.jpg"
-                                    src="/public/images/single-product/1.jpg"
+                                    data-full="../../../public/images/single-product/1.jpg"
+                                    src="../../../public/images/single-product/1.jpg"
                                     class="object-cover object-center max-h-30 max-w-full rounded-lg cursor-pointer"
                                     alt="Gallery Image 1"
                                 />
@@ -56,8 +59,8 @@
                             <div>
                                 <img
                                     onclick="changeImage(this)"
-                                    data-full="/public/images/single-product/2.jpg"
-                                    src="/public/images/single-product/2.jpg"
+                                    data-full="../../../public/images/single-product/2.jpg"
+                                    src="../../../public/images/single-product/2.jpg"
                                     class="object-cover object-center max-h-30 max-w-full rounded-lg cursor-pointer"
                                     alt="Gallery Image 2"
                                 />
@@ -65,8 +68,8 @@
                             <div>
                                 <img
                                     onclick="changeImage(this)"
-                                    data-full="/public/images/single-product/3.jpg"
-                                    src="/public/images/single-product/3.jpg"
+                                    data-full="../../../public/images/single-product/3.jpg"
+                                    src="../../../public/images/single-product/3.jpg"
                                     class="object-cover object-center max-h-30 max-w-full rounded-lg cursor-pointer"
                                     alt="Gallery Image 3"
                                 />
@@ -74,8 +77,8 @@
                             <div>
                                 <img
                                     onclick="changeImage(this)"
-                                    data-full="/public/images/single-product/4.jpg"
-                                    src="/public/images/single-product/4.jpg"
+                                    data-full="../../../public/images/single-product/4.jpg"
+                                    src="../../../public/images/single-product/4.jpg"
                                     class="object-cover object-center max-h-30 max-w-full rounded-lg cursor-pointer"
                                     alt="Gallery Image 4"
                                 />
@@ -83,8 +86,8 @@
                             <div>
                                 <img
                                     onclick="changeImage(this)"
-                                    data-full="/public/images/single-product/5.jpg"
-                                    src="/public/images/single-product/5.jpg"
+                                    data-full="../../../public/images/single-product/5.jpg"
+                                    src="../../../public/images/single-product/5.jpg"
                                     class="object-cover object-center max-h-30 max-w-full rounded-lg cursor-pointer"
                                     alt="Gallery Image 5"
                                 />
@@ -96,11 +99,11 @@
                 <div class="w-full lg:w-1/2 flex flex-col justify-between">
                     <div class="pb-8 border-b border-gray-line">
                         <h1 class="text-3xl font-bold mb-4">
-                            Preppy T-shirt
+                            {{product.Shop.product_name}}
                         </h1>
                         <div class="flex items-center mb-8">
                             <span>★★★★★</span>
-                            <span class="ml-2">(0 Reviews)</span>
+                            <span class="ml-2">{{product.Shop.rating}}</span>
                             <a
                                 href="#review-form-place"
                                 id="write-review-link"
@@ -113,17 +116,19 @@
                                         href="#"
                                         class="hover:text-primary"
                                     >
-                                        Nike</a></strong>
+                                        {{product.Shop.brand}}</a></strong>
                             </p>
                             <p class="mb-2">
-                                Product code:<strong> 00123</strong>
+                                Product code:<strong>
+                                    {{product.id}}</strong>
                             </p>
                             <p class="mb-2">
-                                Availability:<strong> In Stock</strong>
+                                Availability:<strong>
+                                    {{product.product_status}}</strong>
                             </p>
                         </div>
                         <div class="text-2xl font-semibold mb-8">
-                            $40.00
+                            ${{product.Shop.price}}
                         </div>
                         <div class="flex items-center mb-8">
                             <button
@@ -160,7 +165,7 @@
                             class="w-4 h-4 flex items-center justify-center"
                         >
                             <img
-                                src="public/images/social_icons/facebook.svg"
+                                src="../../../public/images/social_icons/facebook.svg"
                                 alt="Facebook"
                                 class="w-4 h-4 transition-transform transform hover:scale-110"
                             />
@@ -170,7 +175,7 @@
                             class="w-4 h-4 flex items-center justify-center"
                         >
                             <img
-                                src="public/images/social_icons/instagram.svg"
+                                src="../../../public/images/social_icons/instagram.svg"
                                 alt="Instagram"
                                 class="w-4 h-4 transition-transform transform hover:scale-110"
                             />
@@ -180,7 +185,7 @@
                             class="w-4 h-4 flex items-center justify-center"
                         >
                             <img
-                                src="public/images/social_icons/pinterest.svg"
+                                src="../../../public/images/social_icons/pinterest.svg"
                                 alt="Pinterest"
                                 class="w-4 h-4 transition-transform transform hover:scale-110"
                             />
@@ -190,7 +195,7 @@
                             class="w-4 h-4 flex items-center justify-center"
                         >
                             <img
-                                src="public/images/social_icons/twitter.svg"
+                                src="../../../public/images/social_icons/twitter.svg"
                                 alt="Twitter"
                                 class="w-4 h-4 transition-transform transform hover:scale-110"
                             />
@@ -200,7 +205,7 @@
                             class="w-4 h-4 flex items-center justify-center"
                         >
                             <img
-                                src="public/images/social_icons/viber.svg"
+                                src="../../../public/images/social_icons/viber.svg"
                                 alt="Viber"
                                 class="w-4 h-4 transition-transform transform hover:scale-110"
                             />
@@ -212,9 +217,7 @@
                             Product Description
                         </h3>
                         <p>
-                            This is a premium quality t-shirt perfect for casual
-                            wear. Made with high-quality fabric to ensure
-                            comfort and durability.
+                            {{product.Shop.description}}
                         </p>
                     </div>
                 </div>
@@ -673,7 +676,7 @@
     </div>
 </section>
 
-<!-- Latest-products -->
+<!-- Latest product section -->
 <section id="latest-products" class="py-10">
     <div class="container mx-auto px-4">
         <h2 class="text-2xl font-bold mb-8">Latest products</h2>
@@ -681,13 +684,15 @@
             <!-- Product 1 -->
             <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
                 <div class="bg-white p-3 rounded-lg shadow-lg">
-                    <img
-                        src="public/images/products/5.jpg"
-                        alt="Product 1"
-                        class="w-full object-cover mb-4 rounded-lg"
-                    />
-                    <a href="#" class="text-lg font-semibold mb-2">Blue women's
-                        suit</a>
+                    <a href="single-product-page.html"><img
+                            src="../../../public/images/products/5.jpg"
+                            alt="Product 1"
+                            class="w-full object-cover mb-4 rounded-lg"
+                        /></a>
+                    <a
+                        href="single-product-page.html"
+                        class="text-lg font-semibold mb-2"
+                    >Blue women's suit</a>
                     <p class="my-2">Women</p>
                     <div class="flex items-center mb-4">
                         <span
@@ -705,13 +710,15 @@
             <!-- Product 2 -->
             <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
                 <div class="bg-white p-3 rounded-lg shadow-lg">
-                    <img
-                        src="public/images/products/6.jpg"
-                        alt="Product 2"
-                        class="w-full object-cover mb-4 rounded-lg"
-                    />
-                    <a href="#" class="text-lg font-semibold mb-2">White shirt
-                        with long sleeves</a>
+                    <a href="single-product-page.html"><img
+                            src="../../../public/images/products/6.jpg"
+                            alt="Product 2"
+                            class="w-full object-cover mb-4 rounded-lg"
+                        /></a>
+                    <a
+                        href="single-product-page.html"
+                        class="text-lg font-semibold mb-2"
+                    >White shirt with long sleeves</a>
                     <p class="my-2">Women</p>
                     <div class="flex items-center mb-4">
                         <span
@@ -728,13 +735,15 @@
             <!-- Product 3 -->
             <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
                 <div class="bg-white p-3 rounded-lg shadow-lg">
-                    <img
-                        src="public/images/products/7.jpg"
-                        alt="Product 3"
-                        class="w-full object-cover mb-4 rounded-lg"
-                    />
-                    <a href="#" class="text-lg font-semibold mb-2">Yellow men's
-                        suit</a>
+                    <a href="single-product-page.html"><img
+                            src="../../../public/images/products/7.jpg"
+                            alt="Product 3"
+                            class="w-full object-cover mb-4 rounded-lg"
+                        /></a>
+                    <a
+                        href="single-product-page.html"
+                        class="text-lg font-semibold mb-2"
+                    >Yellow men's suit</a>
                     <p class="my-2">Men</p>
                     <div class="flex items-center mb-4">
                         <span
@@ -752,12 +761,15 @@
             <!-- Product 4 -->
             <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
                 <div class="bg-white p-3 rounded-lg shadow-lg">
-                    <img
-                        src="public/images/products/8.jpg"
-                        alt="Product 4"
-                        class="w-full object-cover mb-4 rounded-lg"
-                    />
-                    <a href="#" class="text-lg font-semibold mb-2">Red dress</a>
+                    <a href="single-product-page.html"><img
+                            src="../../../public/images/products/8.jpg"
+                            alt="Product 4"
+                            class="w-full object-cover mb-4 rounded-lg"
+                        /></a>
+                    <a
+                        href="single-product-page.html"
+                        class="text-lg font-semibold mb-2"
+                    >Red dress</a>
                     <p class="my-2">Women</p>
                     <div class="flex items-center mb-4">
                         <span

@@ -3,9 +3,10 @@ const aboutRouter = require("../components/about/aboutRoute");
 const userRouter = require("../components/user/userRoute");
 const shopRouter = require("../components/shop/shopRoute");
 const contactRouter = require("../components/contact/contactRoute");
+const productRouter = require("../components/shop/product/productRoute");
 
 function route(app) {
-    app.get("/product", shopRouter);
+    app.get("/product/:id", productRouter);
     app.get("/404", homeRouter);
     app.get("/login", userRouter);
     app.get("/contact", contactRouter);
