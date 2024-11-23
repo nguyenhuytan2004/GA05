@@ -1,5 +1,5 @@
 -- Tạo cơ sở dữ liệu mới
-#drop database my_store;
+drop database if exists my_store;
 CREATE DATABASE IF NOT EXISTS my_store;
 
 -- Sử dụng cơ sở dữ liệu vừa tạo
