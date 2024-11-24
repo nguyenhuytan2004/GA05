@@ -66,14 +66,24 @@ class ShopModel {
         return Shop; // Getter cho đối tượng Shop
     }
 
-    static async getProducts({ category = [], size = [] }) {
+
+    static async getProducts({ category = [], size = [], color = [], brand = [], rating = [] }) {
         try {
-            // Xử lý category và size nếu là chuỗi
+            // Xử lý filter nếu là chuỗi
             if (typeof category === "string") {
                 category = [category];
             }
             if (typeof size === "string") {
                 size = [size];
+            }
+            if (typeof category === "string") {
+                color = [color];
+            }
+            if (typeof size === "string") {
+                brand = [brand];
+            }
+            if (typeof category === "string") {
+                rating = [rating];
             }
 
             // Điều kiện truy vấn
@@ -84,7 +94,15 @@ class ShopModel {
             if (size.length > 0) {
                 whereConditions.size = size;
             }
-
+            if (color.length > 0) {
+                whereConditions.color = color;
+            }
+            if (brand.length > 0) {
+                whereConditions.brand = brand;
+            }
+            if (rating.length > 0) {
+                whereConditions.rating = rating;
+            }
             // Truy vấn cơ sở dữ liệu
             const products = await Shop.findAll({
                 where: whereConditions,

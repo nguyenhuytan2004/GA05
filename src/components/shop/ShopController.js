@@ -4,8 +4,8 @@ class ShopController {
     // [GET] '/shop'
     async index(req, res) {
         try {
-            const { category, size } = req.query;
-            const products = await Shop.getProducts({ category, size });
+            const { category, size, color, brand, rating } = req.query;
+            const products = await Shop.getProducts({ category, size, color, brand, rating });
 
             // Truyền dữ liệu vào view
             res.render("shop", { shop: products });
